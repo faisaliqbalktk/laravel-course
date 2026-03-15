@@ -1,6 +1,6 @@
 # Laravel Course Projects
 
-This repository contains **30+ beginner Laravel practice projects** created while learning Laravel fundamentals.
+This repository contains ** beginner to advance laravel12 concepts** created while learning Laravel fundamentals.
 
 ## Course Followed
 Laravel 12 Full Course
