@@ -1,0 +1,128 @@
+to setup new laravel project first need to install composer and laravel globally
+and then command for new project (laravel new project_name)
+for runing command (php artisan serve).
+
+to make banner for error, success etc use this 
+-> php artisan make:component messageBanner
+
+-> Publishes Laravel default language files for customizing validation and system messages.a
+php artisan lang:publish
+
+-> Creates a reusable custom validation rule class for clean, centralized form validation logic.
+php artisan make:rule Uppercase
+
+-> migration command 
+php artisan migrate
+
+-> php artisan model:show db_name
+// Displays database model structure, columns, relationships, and attributes for the specified database connection.
+
+->localization
+set localization by user
+ . Make Middleware
+ . Set lang with Middleware
+ . update lang with Middleware
+
+
+
+
+
+
+
+if you want to create db for the project after installation
+Step-by-step fix (recommended path)
+1️⃣ Open your .env file
+
+From project root:
+
+nano .env
+
+
+Verify these values:
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel12_9th_httpclient
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+(Password may differ depending on your local setup)
+
+2️⃣ Create the database (mandatory)
+
+Login to MySQL:
+
+mysql -u root -p
+
+
+Then run:
+
+CREATE DATABASE laravel12_9th_httpclient;
+EXIT;
+
+
+No tables yet — that’s fine.
+
+3️⃣ Clear cached config (important)
+
+Laravel aggressively caches config.
+
+php artisan config:clear
+php artisan cache:clear
+
+4️⃣ Run migrations (creates sessions table)
+php artisan migrate
+
+
+You should see green success output.
+
+5️⃣ Restart the server
+php artisan serve
+
+
+Open:
+
+http://127.0.0.1:8000
+
+
+// Disables automatic handling of `created_at` and `updated_at` timestamp columns for this model
+public $timestamps = false;
+
+
+
+
+
+
+
+1, as view page without blade extension run or not
+
+2,what is mvc?
+Models: Write Buisness logic, database commuincation
+View: User interface (Code we write to display on UI)
+Controller: Handle user interaction and select a view to render, communicate Model and View
+User → View → Controller → Model → Controller → View → User
+
+
+3, what is vendor and as the vendor folder we push or not on git if no then why?
+
+4, what is routing in laravel
+
+5, Routing Methods in laravel
+  .Route::post($uri, $callback);
+  .Route::put($uri, $callback);
+  .Route::patch($uri, $callback);
+  .Route::delete($uri, $callback);
+  .Route::options($uri, $callback);
+
+
+6, what is Controller?
+
+
+7, what is Query Builder?
+// Query Builder: A fluent, chainable interface in Laravel 
+// that allows you to build database queries programmatically 
+// without writing raw SQL. It is safe, readable, and database-independent.
+
+

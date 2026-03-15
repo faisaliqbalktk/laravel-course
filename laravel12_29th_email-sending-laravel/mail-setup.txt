@@ -1,0 +1,96 @@
+You generate the **Gmail App Password** inside your **Google Account Security settings**. Follow these steps carefully 👇
+
+---
+
+## 1️⃣ Open Google Account Security
+
+Go to this page:
+
+[https://myaccount.google.com/security](https://myaccount.google.com/security)
+
+Login with your Gmail account.
+
+---
+
+## 2️⃣ Enable 2-Step Verification
+
+Scroll to **“How you sign in to Google”**
+
+Click **2-Step Verification** → Turn it **ON**.
+
+⚠️ Without enabling **2FA**, the **App Password option will not appear**.
+
+---
+
+## 3️⃣ Open App Passwords
+
+After enabling 2FA:
+
+Go to:
+
+[https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+
+You will see **Generate App Password** page.
+
+---
+
+## 4️⃣ Generate Password
+
+Now do this:
+
+1. **Select App** → `Mail`
+2. **Select Device** → `Other (Custom name)`
+3. Type → `Laravel`
+4. Click **Generate**
+
+Google will give you a **16-character password** like:
+
+```
+abcd efgh ijkl mnop
+```
+
+---
+
+## 5️⃣ Put It in Laravel `.env`
+
+Example:
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=iamfaisalktk@gmail.com
+MAIL_PASSWORD=abcdefghijklmnop
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=iamfaisalktk@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+⚠️ Important
+
+* Remove spaces in password if you want
+* **Do NOT use your normal Gmail password**
+
+---
+
+## 6️⃣ Clear Config Cache
+
+Run this command:
+
+```bash
+php artisan config:clear
+```
+
+Then test again:
+
+```
+http://127.0.0.1:8000/mail
+```
+
+---
+
+✅ After this your **Laravel email will work with Gmail SMTP**.
+
+---
+
+If you want, I can also show you **a professional Laravel email setup (Mailtrap)** which most developers use instead of Gmail for testing. It avoids Gmail security problems.

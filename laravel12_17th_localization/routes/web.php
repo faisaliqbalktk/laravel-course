@@ -1,0 +1,18 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::view('about', 'about');
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ur', 'ar'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+});
+
